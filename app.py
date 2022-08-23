@@ -6,16 +6,16 @@ import os
 
 app = Flask(__name__)
 
-model_path = os.path.abspath('model')
-model_path = model_path.replace("\\", "/")
-mle_file = model_path+'/XGBmodel.pkl'
-scalar_file = model_path + '/Mimmax_scaler.pkl'
+#model_path = os.path.abspath('model')
+#model_path = model_path.replace("\\", "/")
+#mle_file = model_path+'/XGBmodel.pkl'
+#scalar_file = model_path + '/Mimmax_scaler.pkl'
 
-print(mle_file)
+#print(mle_file)
 
 
-scaler = pickle.load(open(scalar_file, 'rb'))
-model = pickle.load(open(mle_file, 'rb'))
+scaler = pickle.load(open('Mimmax_scaler.pkl', 'rb'))
+model = pickle.load(open('XGBmodel.pkl', 'rb'))
 
 
 @app.route('/')
